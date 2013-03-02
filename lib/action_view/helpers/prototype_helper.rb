@@ -547,7 +547,7 @@ module ActionView
 
             def with_formats(*args)
               return yield unless @context
-              
+
               lookup = @context.lookup_context
               begin
                 old_formats, lookup.formats = lookup.formats, args
@@ -654,7 +654,7 @@ module ActionView
     end
 
     # Converts chained method calls on DOM proxy elements into JavaScript chains
-    class JavaScriptProxy < ActiveSupport::BasicObject #:nodoc:
+    class JavaScriptProxy < ActiveSupport::ProxyObject #:nodoc:
 
       def initialize(generator, root = nil)
         @generator = generator
